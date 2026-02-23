@@ -1,61 +1,110 @@
-# Cypress Case – Challenging DOM
+# Projeto de Testes Automatizados
 
-Projeto de automação de testes E2E utilizando **Cypress**, aplicado na página
-**Challenging DOM** do site The Internet.
+Este projeto contém **testes automatizados de UI e API** utilizando **Cypress**, com foco em garantir a qualidade das funcionalidades e integrações do sistema.
 
-## 🧪 Tecnologias
-- Node.js
-- Cypress
-- JavaScript
-- Page Object Model (POM)
+---
 
-## 📁 Estrutura do Projeto
-cypress-case/
-├─ cypress/
-│ ├─ e2e/
-│ │ └─ ui/
-│ │ └─ challengingDom/
-│ │ ├─ buttons.cy.js
-│ │ └─ tableActions.cy.js
-│ └─ support/
-│ ├─ pages/
-│ │ └─ challengingDom/
-│ │ ├─ elements.js
-│ │ └─ index.js
-│ ├─ commands.js
-│ └─ e2e.js
-├─ package.json
-├─ cypress.config.js
-└─ README.md
+## 🧪 Tipos de Testes
 
-## ▶️ Como rodar o projeto
-1. Instale as dependências:
+### 🔹 Testes de UI (Interface)
+
+* Validação de fluxos do usuário
+* Testes end-to-end (E2E)
+* Simulação de comportamento real do usuário no navegador
+
+📁 Local:
+
+```
+cypress/e2e/ui
+```
+
+---
+
+### 🔹 Testes de API
+
+* Validação de endpoints
+* Regras de negócio
+* Status HTTP e contratos (schemas)
+
+📁 Local:
+
+```
+cypress/e2e/api
+```
+
+---
+
+## ⚙️ Pré-requisitos
+
+Antes de rodar os testes, é necessário ter instalado:
+
+* Node.js
+* NPM
+
+Para instalar as dependências do projeto:
+
 ```bash
 npm install
+```
 
-## Abrir o Cypress:
+---
+
+## ▶️ Como rodar os testes
+
+### 🖥️ Abrir o Cypress (modo interativo)
+
+Ideal para desenvolvimento e debug:
+
+```bash
 npx cypress open
+```
 
-## Para rodar o cypress 
+Depois:
+
+1. Selecione **E2E Testing**
+2. Escolha o navegador
+3. Clique no teste desejado
+
+---
+
+### 🤖 Rodar todos os testes (modo headless)
+
+```bash
 npx cypress run
+```
 
-# Node
-node_modules/
+---
 
-# Cypress
-cypress/videos/
-cypress/screenshots/
-.cypress.env.json
+### 🎯 Rodar apenas testes de UI
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+```bash
+npx cypress run --spec "cypress/e2e/ui/**"
+```
 
-# Sistema
-.DS_Store
-Thumbs.db
+---
 
-# IDE
-.vscode/
-.idea/
+### 🎯 Rodar apenas testes de API
+
+```bash
+npx cypress run --spec "cypress/e2e/api/**"
+```
+
+---
+
+## 📌 Observações
+
+* Os testes podem ser executados localmente ou em pipeline CI/CD
+* Recomenda-se rodar testes de API antes dos testes de UI
+* Commits devem ser feitos apenas com arquivos relevantes (sem node_modules)
+
+---
+
+## ✅ Tecnologias utilizadas
+
+* Cypress
+* JavaScript
+* Node.js
+
+---
+
+🚀 Projeto focado em qualidade, automação e boas práticas de testes.
